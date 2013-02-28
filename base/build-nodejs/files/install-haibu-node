@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+#
+# Echo all commands
+#
+set -v
+
+#
+# Remove changes that `sed` introduced now that
+# we've created the tarball.
+#
+pushd /root/node
+git checkout .
+popd
+
+INSTALL_ROOT="$BUILD_ROOT/haibu"
+
+#
+# Remove old /opt/haibu if it exists
+#
+rm -rf   $INSTALL_ROOT
+mkdir -p $INSTALL_ROOT
+
+NODE_ROOT=$INSTALL_ROOT/node-versions
+NODE_DEST=$NODE_ROOT/$VERSION
+CARAPACE_ROOT=$INSTALL_ROOT/carapace-versions
+CARAPACE_DEST=$CARAPACE_ROOT/$VERSION
+ARCH=$q_os_arch
+
+pushd $HOME/node || exit $?
+VERSIONTAG=`printf "v$VERSION"`
+
+echo "installing : $VERSIONTAG"
+git checkout $VERSIONTAG || git checkout -f $VERSIONTAG || (git fetch --all && git fetch --tag && git checkout $VERSIONTAG || git checkout -f $VERSIONTAG) || exit $?
+
+echo "making node"
+(./configure --without-npm --prefix $NODE_DEST --dest-cpu $ARCH && (make || (make clean && make)) && make install) || (./configure --prefix $NODE_DEST --dest-cpu $ARCH && (make || (make clean || make)) && make install) || exit $?
+
+(printf $ARCH | grep 64) && sed -i 's/\(\s*\)# with[^\n]*/\0\n\1conf.env.append_value("CXXFLAGS", ["-m64"])\n\1conf.env.append_value("CCFLAGS", ["-m64"])\n\1conf.env.append_value("LINKFLAGS", ["-m64"])\n/' $NODE_DEST/lib/node/wafadmin/Tools/node_addon.py
+
+cp deps/v8/tools/js2c.py $NODE_DEST/bin/
+cp deps/v8/tools/jsmin.py $NODE_DEST/bin/
+
+PATH=$NODE_DEST/bin:$PATH
+CPATH=$NODE_DEST/include:$CPATH
+LIBRARY_PATH=$NODE_DEST/lib:$LIBARY_PATH
+
+echo "installing npm"
+npm_config_prefix=$NODE_DEST
+curl -k https://npmjs.org/install.sh | clean=yes npm_config_prefix=$NODE_DEST sh || exit $?
+
+echo "installing carapace"
+mkdir -p $CARAPACE_DEST
+export VERSION NODE_ROOT
+pushd $CARAPACE_DEST
+  $BUILD_ROOT/tmp/build-nodejs/npm-install-for-version --reg http://registry.npmjs.org \
+    --always-auth false haibu-carapace || exit $?
+  $BUILD_ROOT/tmp/build-nodejs/npm-install-for-version --reg http://registry.npmjs.org \
+    --always-auth false node-fork || exit $?
+popd
+
+$BUILD_ROOT/tmp/build-nodejs/npm-install-for-version --reg http://registry.npmjs.org \
+  --always-auth false -g coffee-script || exit $?
+popd
+
+#
+# Create tarballs for and /opt/haibu
+#
+pushd $BUILD_ROOT
+mkdir -p $HOME/www/dist/haibu/$VERSIONTAG
+NODE_FILE="$VERSIONTAG-$q_nodejs_platform-$q_nodejs_arch"
+tar -czf $HOME/www/dist/haibu/$VERSIONTAG/$NODE_FILE.tar.gz haibu/
+popd

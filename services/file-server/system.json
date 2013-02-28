@@ -1,0 +1,10 @@
+{
+  "name": "file-server",
+  "version": "1.0.1",
+  "description": "File server for Nodejitsu services-layer",
+  "keywords": ["service", "CDN", "files"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "dependencies": {
+    "npm-manager": "1.0.x"
+  }
+}

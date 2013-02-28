@@ -1,0 +1,11 @@
+{
+  "name": "npm-manager",
+  "version": "1.0.0",
+  "description": "Manages a specified npm package across versions",
+  "keywords": ["npm", "base"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "contributors": [{ "name": "Charlie Robbins", "email": "charlie@nodejitsu.com" }],
+  "dependencies": {
+    "quill-base": "0.x.x"
+  }
+}

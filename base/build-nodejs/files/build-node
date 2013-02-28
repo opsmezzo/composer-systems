@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+#
+# Echo all commands
+#
+set -v
+
+pushd /root
+
+pushd node
+git checkout -f v$VERSION
+./configure --prefix $ROOT --dest-cpu $q_nodejs_arch
+make
+make install
+
+sed -i 's/\(\s*\)# with[^\n]*/\0\n\1conf.env.append_value("CXXFLAGS", ["-m64"])\n\1conf.env.append_value("CCFLAGS", ["-m64"])\n\1conf.env.append_value("LINKFLAGS", ["-m64"])\n/' tools/wafadmin/Tools/node_addon.py
+popd
+
+#
+# Create tarballs for /root/node
+#
+# Should probably infer $q_nodejs_platform and $q_nodejs_arch
+# from the running machine
+#
+NODE_FILE="v$VERSION-$q_nodejs_platform-$q_nodejs_arch"
+tar -czf "$HOME/www/dist/v$VERSION/$NODE_FILE.tar.gz" node/
+popd

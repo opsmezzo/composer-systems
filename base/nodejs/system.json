@@ -1,0 +1,12 @@
+{
+  "name": "nodejs",
+  "version": "0.2.1",
+  "description": "Installs a pre-compiled version of node.js",
+  "keywords": ["nodejs", "base", "required"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "contributors": [{ "name": "Charlie Robbins", "email": "charlie@nodejitsu.com" }],
+  "os": {
+    "ubuntu": { "ubuntu-base": "0.0.x" },
+    "smartos": { "smartos-base": "0.0.x" }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "couchdb",
+  "version": "0.1.0",
+  "description": "couchdb sane defaults",
+  "keywords": ["couchdb", "nosql", "databases", "jmfdusi"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "os": {
+    "ubuntu": { "ubuntu-base": "0.1.x" }
+  }
+}

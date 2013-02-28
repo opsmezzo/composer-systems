@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Store the package we are to download
+#
+PACKAGE=$1
+
+cd $HOME
+#
+# Download relevant files
+#
+npm pack "$PACKAGE@*" -g
+
+#
+# Untar the package and install dependencies
+#
+rm -rf package
+tar -zxvf $PACKAGE*.tgz
+mv package $HOME/$PACKAGE
+cd "$HOME/$PACKAGE"
+npm install --production

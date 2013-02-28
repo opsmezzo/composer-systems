@@ -1,0 +1,21 @@
+PACKAGE=$1
+
+#
+# Get the version of the existing install
+#
+VERSION=`pkgver $HOME/$PACKAGE/package.json`
+
+#
+# Move the existing package into place under $HOME/versions
+#
+if [ ! -d $HOME/versions/$VERSION ]; then
+  mkdir -p $HOME/versions/$VERSION
+fi
+
+if [ -d $HOME/$PACKAGE ]; then
+  mv $HOME/$PACKAGE $HOME/versions/$VERSION/$PACKAGE
+fi
+
+if [ -f $HOME/$PACKAGE-$VERSION.tgz ]; then
+  mv $HOME/$PACKAGE-$VERSION.tgz $HOME/versions/$VERSION/$PACKAGE.tgz
+fi

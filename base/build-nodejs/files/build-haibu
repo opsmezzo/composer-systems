@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+#
+# Echo all commands
+#
+set -v
+
+#
+# Install /opt/haibu for all node-versions
+# in $q_nodejs_build_version_(\d)
+#
+build_index=0
+while [ true ]; do
+  build_version="q_nodejs_build_versions_$build_index"
+  version=${!build_version}
+  
+  if [ -z $version ]; then
+    break;
+  fi
+  
+  versiontag="v$version"
+  file="v$version-$q_nodejs_platform-$q_nodejs_arch"
+  tarball="$PUBLIC_ROOT/haibu/$versiontag/$file.tar.gz"
+  
+  if [ -f $tarball ]; then
+    echo "Already built: $tarball"
+    build_index=`expr $build_index + 1`
+    continue;
+  fi
+    
+  VERSION=${!build_version} $BUILD_ROOT/tmp/build-nodejs/install-haibu-node
+  build_index=`expr $build_index + 1`
+done

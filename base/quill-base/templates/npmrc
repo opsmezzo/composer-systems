@@ -1,0 +1,4 @@
+always-auth = true
+strict-ssl = false
+unsafe-perm = true
+registry = {{ npm.registry }}

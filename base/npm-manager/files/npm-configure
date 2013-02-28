@@ -1,0 +1,10 @@
+PACKAGE=$1
+
+#
+# Create $HOME/config and move the config.json file into it
+#
+if [ ! -d $HOME/config ]; then
+  mkdir $HOME/config
+fi
+
+cp ../templates/* $HOME/config/

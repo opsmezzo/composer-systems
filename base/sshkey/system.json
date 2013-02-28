@@ -1,0 +1,7 @@
+{
+  "name": "sshkey",
+  "version": "1.0.0",
+  "description": "Adds a new SSH keypair",
+  "keywords": ["base", "ssh", "ssh-keygen"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>"
+}

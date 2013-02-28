@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+#
+# Echo all commands
+#
+set -v
+
+export NODE_PREFIX=$NODE_ROOT/$VERSION
+export PATH=$NODE_PREFIX/bin:$PATH
+export LIBRARY_PATH=$NODE_PREFIX/lib:$NODE_PREFIX/lib/node:$LIBRARY_PATH
+export CPATH=$NODE_PREFIX/include:$NODE_PREFIX/include/node:$CPATH
+rm -rf build
+node-waf clean || true
+$NODE_PREFIX/bin/npm install $@

@@ -1,0 +1,7 @@
+{
+  "name": "ssh-tunnel",
+  "version": "1.0.0",
+  "description": "SSH-Tunnel server for Nodejitsu services-layer",
+  "keywords": ["service", "tunnel", "proxy", "ssh"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>"
+}

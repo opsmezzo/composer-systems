@@ -1,0 +1,6 @@
+{
+  "username": "{{ composer.username }}",
+  "password": "{{ composer.password }}",
+  "remoteHost": "{{ composer.host }}",
+  "port": "{{ composer.port }}"
+}

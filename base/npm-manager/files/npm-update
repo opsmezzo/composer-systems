@@ -1,0 +1,4 @@
+PACKAGE=$1
+
+npm-uninstall $PACKAGE
+npm-download $PACKAGE

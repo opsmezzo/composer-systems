@@ -1,0 +1,20 @@
+{
+  "name": "build-nodejs",
+  "version": "0.2.0",
+  "description": "Builds node.js on a specific server",
+  "keywords": ["build", "nodejs"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "contributors": [{ "name": "Charlie Robbins", "email": "charlie@nodejitsu.com" }],
+  "variables": {
+    "root": "/opt/local",
+    "node_version": "0.8.5",
+    "flags": "--dest-cpu x64"
+  },
+  "dependencies": {
+    "file-server": "1.0.x"
+  },
+  "os": {
+    "ubuntu": { "ubuntu-base": "0.x.x" },
+    "smartos": { "smartos-base": "0.x.x" }
+  }
+}
