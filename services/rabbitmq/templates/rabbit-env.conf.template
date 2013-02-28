@@ -1,0 +1,4 @@
+export RABBITMQ_NODE_IP_ADDRESS={{os.networkInterfaces.eth0.ipv4.0}}
+export RABBITMQ_SERVER_START_ARGS="-setcookie {{bcpc.services.rabbitmq.cookie}}"
+export ERL_EPMD_ADDRESS={{os.networkInterfaces.eth0.ipv4.0}}
+

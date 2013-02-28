@@ -1,0 +1,22 @@
+{
+  "name": "kibana",
+  "version": "0.0.0",
+  "description": "Deployment of Kibana, Elastic Search, and Logstash for standalone VM",
+  "keywords": [
+    "kibana",
+    "logstash",
+    "elasticsearch",
+    "base",
+    "required"
+  ],
+  "remoteDependencies": {
+    "elasticsearch": "1.x.x",
+    "logstash": "1.x.x"
+  },
+  "dependencies": {
+    "upstart": "1.x.x"
+  },
+  "os": {
+    "ubuntu": { "ubuntu-base": "0.1.x" }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "elasticsearch",
+  "version": "0.0.0",
+  "description": "Elasticsearch with sane defaults",
+  "keywords": ["redis", "nosql", "databases"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "dependencies": {
+    "upstart": "1.x.x"
+  },
+  "os": {
+    "ubuntu": { "ubuntu-base": "0.1.x" }
+  }
+}

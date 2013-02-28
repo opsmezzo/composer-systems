@@ -1,0 +1,57 @@
+input {
+	file {
+		type => "unix-syslog"
+		path => [ "/var/log/syslog", "/var/log/auth.log" ]
+	}
+	file {
+		type => "apache-access"
+		path => "/var/log/apache2/access.log"
+	}
+	file {
+		type => "apache-error"
+		path => "/var/log/apache2/error.log"
+	}
+	file {
+		type => "ceph-daemons"
+		path => "/var/log/ceph/ceph-*.log"
+	}
+	file {
+		type => "ceph-activity"
+		path => "/var/log/ceph/ceph.log"
+	}
+	file {
+		type => "openstack"
+		path => [ "/var/log/cinder/*.log", "/var/log/glance/*.log", "/var/log/keystone/*.log", "/var/log/nova/*.log" ]
+	}
+	file {
+		type => "mysql"
+		path => "/var/lib/mysql/{{os.hostname}}.err"
+	}
+	file {
+		type => "elasticsearch"
+		path => "/var/log/elasticsearch/{{bcpc.region_name}}.log"
+	}
+}
+
+filter {
+	grok {
+		type => "apache-access"
+		pattern => "%{COMBINEDAPACHELOG}"
+	}
+	date {
+		type => "apache-access"
+		timestamp => "dd/MMM/yyyy:HH:mm:ss Z"
+	} 
+}
+
+output { 
+	stdout { 
+		debug => true
+	}
+	elasticsearch_river {
+		amqp_host => "{{os.networkInterfaces.eth0.ipv4.0}}"
+		es_host => "{{os.networkInterfaces.eth0.ipv4.0}}"
+		user => "guest"
+		password => "{{bcpc.services.rabbitmq.password}}"
+	}
+}

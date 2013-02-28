@@ -1,0 +1,17 @@
+{
+  "name": "logstash",
+  "version": "0.0.0",
+  "description": "Logstash backed by redis and elasticsearch",
+  "keywords": ["logstash", "redis", "logging", "elasticsearh"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "remoteDependencies": {
+    "elasticsearch": "1.x.x",
+    "redis": "1.x.x"
+  },
+  "dependencies": {
+    "upstart": "1.x.x"
+  },
+  "os": {
+    "ubuntu": { "ubuntu-base": "0.1.x" }
+  }
+}

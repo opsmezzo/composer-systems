@@ -1,0 +1,4 @@
+[{rabbitmq_management,
+  [{listener, [{port, {{bcpc.services.rabbitmq.web_port}} } ]}
+  ]}
+].
