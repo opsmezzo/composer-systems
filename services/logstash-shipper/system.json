@@ -1,6 +1,6 @@
 {
   "name": "logstash-shipper",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Logstash shipper backed by redis",
   "keywords": ["logstash", "redis", "logging", "elasticsearh"],
   "author": "Nodejitsu Inc <info@nodejitsu.com>",

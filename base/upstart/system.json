@@ -1,0 +1,10 @@
+{
+  "name": "upstart",
+  "version": "1.0.0",
+  "description": "Upstart process monitoring",
+  "keywords": ["upstart", "fault tolerant", "process monitoring"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "os": {
+    "ubuntu": { "ubuntu-base": "0.1.x" }
+  }
+}
