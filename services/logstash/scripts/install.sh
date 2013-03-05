@@ -3,7 +3,7 @@
 #
 # Install jdk
 #
-apt-get -y install openjdk-7-jre-headless rubygems
+apt-get -y install openjdk-7-jre-headless
 
 #
 # Get latest logstash binary

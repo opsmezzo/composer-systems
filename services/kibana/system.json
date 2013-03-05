@@ -11,7 +11,7 @@
   ],
   "remoteDependencies": {
     "elasticsearch": "1.x.x",
-    "logstash": "1.x.x"
+    "logstash-indexer": "1.x.x"
   },
   "dependencies": {
     "upstart": "1.x.x"

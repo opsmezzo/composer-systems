@@ -169,7 +169,7 @@ path.plugins: /usr/share/elasticsearch/plugins
 
 # If a plugin listed here is not installed for current node, the node will not start.
 #
-plugin.mandatory: river-rabbitmq
+#plugin.mandatory: river-rabbitmq
 
 
 ################################### Memory ####################################
@@ -207,7 +207,7 @@ plugin.mandatory: river-rabbitmq
 
 # Set both 'bind_host' and 'publish_host':
 #
-network.host: {{ips.management}} 
+network.host: {{os.networkInterfaces.eth0.ipv4.0}} 
 
 # Set a custom port for the node to node communication (9300 by default):
 #

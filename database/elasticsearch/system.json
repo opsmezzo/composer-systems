@@ -2,7 +2,7 @@
   "name": "elasticsearch",
   "version": "0.0.0",
   "description": "Elasticsearch with sane defaults",
-  "keywords": ["redis", "nosql", "databases"],
+  "keywords": ["elasticsearch", "nosql", "databases"],
   "author": "Nodejitsu Inc <info@nodejitsu.com>",
   "dependencies": {
     "upstart": "1.x.x"

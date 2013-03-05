@@ -1,10 +1,14 @@
 {
-  "name": "logstash",
-  "version": "1.0.0",
-  "description": "Installs logstash and upstart config files",
+  "name": "logstash-shipper",
+  "version": "0.0.0",
+  "description": "Logstash shipper backed by redis",
   "keywords": ["logstash", "redis", "logging", "elasticsearh"],
   "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "remoteDependencies": {
+    "redis": "1.x.x"
+  },
   "dependencies": {
+    "logstash": "1.x.x",
     "upstart": "1.x.x"
   },
   "os": {

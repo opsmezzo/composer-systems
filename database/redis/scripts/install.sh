@@ -1,10 +1,19 @@
-http://redis.googlecode.com/files/redis-2.4.1.tar.gz | tar -xz
-cd redis-2.4.1
-make
-make PREFIX=/usr install
+#!/bin/bash
 
+#
+# Install redis files
+#
+pushd /opt
+  curl http://redis.googlecode.com/files/redis-2.6.10.tar.gz -o redis-2.6.10.tar.gz
+  tar xzf redis-2.6.10.tar.gz
+  cd redis-2.4.1
+  make
+  make PREFIX=/usr install
+popd
+
+#
+# Add the redis user and directories
+#
 useradd redis || true
-mkdir -p /var/lib/redis /var/log/redis /etc/redis/
-chown redis.redis /var/lib/redis
-chown redis.redis /var/log/redis
-cd $HOME
+mkdir -p /var/lib/redis /var/log/redis /etc/redis
+chown redis.redis /var/lib/redis /var/log/redis /etc/redis

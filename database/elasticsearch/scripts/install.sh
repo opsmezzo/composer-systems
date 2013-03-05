@@ -1,3 +1,10 @@
+#!/bin/bash
+
+#
+# Install jdk
+#
+apt-get -y install openjdk-7-jre-headless
+
 #
 # Install elasticsearch
 # Fetched from: https://github.com/downloads/elasticsearch/elasticsearch/elasticsearch-0.19.11.deb
