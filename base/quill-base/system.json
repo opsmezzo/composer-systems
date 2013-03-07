@@ -1,6 +1,6 @@
 {
   "name": "quill-base",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "description": "Base system on which all quill systems must depend",
   "keywords": ["conservatory", "configuration", "quill", "base", "required"],
   "author": "Nodejitsu Inc <info@nodejitsu.com>",

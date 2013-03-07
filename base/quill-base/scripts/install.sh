@@ -17,7 +17,7 @@ npm install forever -g
 # Move npmrc to $HOME/.npmrc
 #
 cp ../templates/npmrc $HOME/.npmrc
-echo -e "\n_auth = $AUTH" >> $HOME/.npmrc
+echo "_auth = $AUTH" >> $HOME/.npmrc
 
 #
 # Install quill from internal npm
