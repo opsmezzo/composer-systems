@@ -6,7 +6,7 @@
 pushd /opt
   curl http://redis.googlecode.com/files/redis-2.6.10.tar.gz -o redis-2.6.10.tar.gz
   tar xzf redis-2.6.10.tar.gz
-  cd redis-2.4.1
+  cd redis-2.6.10
   make
   make PREFIX=/usr install
 popd
