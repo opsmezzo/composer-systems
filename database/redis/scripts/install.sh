@@ -14,6 +14,6 @@ popd
 #
 # Add the redis user and directories
 #
-useradd redis || true
-mkdir -p /var/lib/redis /var/log/redis /etc/redis
-chown redis.redis /var/lib/redis /var/log/redis /etc/redis
+adduser --system --no-create-home --disabled-password --disabled-login --ingroup adm redis true
+mkdir -p /var/lib/redis /var/log/redis /etc/redis /var/run/redis
+chown redis:adm /var/lib/redis /var/log/redis /etc/redis /var/run/redis
