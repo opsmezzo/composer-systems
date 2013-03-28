@@ -1,0 +1,10 @@
+{
+  "name": "graphite",
+  "version": "1.0.0",
+  "description": "graphite sane defaults",
+  "keywords": ["graphite", "metrics", "carbon", "databases"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "os": {
+    "ubuntu": { "ubuntu-base": "0.1.x" }
+  }
+}
