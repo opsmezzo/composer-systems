@@ -16,12 +16,12 @@ pushd /opt/src
   git clone https://github.com/graphite-project/whisper.git
   cd whisper
   git checkout 0.9.x
-  sudo python setup.py install
+  python setup.py install
   cd ..
   
   # Install django, python and graphite-web dependencies
-  sudo apt-get install -y python-dev python-cairo-dev python-django python-ldap python-setuptools libcairo2-dev
-  sudo easy_install django django-tagging
+  apt-get install -y python-dev python-cairo-dev python-django python-ldap python-setuptools libcairo2-dev
+  easy_install django django-tagging
 
   # Install py2cairo manually because ... well ... it's python.  
   wget http://cairographics.org/releases/py2cairo-1.10.0.tar.bz2

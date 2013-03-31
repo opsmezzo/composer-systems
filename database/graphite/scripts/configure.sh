@@ -17,6 +17,6 @@ cp -f ../templates/local_settings.py /opt/graphite/webapp/graphite/local_setting
 #
 
 pushd /opt/graphite/webapp/graphite
-  sudo python manage.py syncdb
-  sudo chown nobody:nobody /opt/graphite/storage/graphite.db
+  python manage.py syncdb
+  chown nobody:nogroup /opt/graphite/storage/graphite.db
 popd
