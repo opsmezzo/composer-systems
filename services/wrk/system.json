@@ -1,0 +1,19 @@
+{
+  "name": "wrk",
+  "version": "1.0.1",
+  "description": "wrk load testing tool",
+  "keywords": ["load testing", "wrk", "ab"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "dependencies": {
+    "npm-manager": "1.0.x"
+  },
+  "config": {
+    "requests": "100k",
+    "threads": 4,
+    "conc": 20
+  },
+  "os": {
+    "ubuntu": { "ubuntu-base": "0.0.x" },
+    "smartos": { "smartos-base": "0.0.x" }
+  }
+}
