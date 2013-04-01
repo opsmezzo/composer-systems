@@ -1,17 +1,22 @@
 #!/bin/bash
 
 #
-# Install graphite config files
+# Echo all commands
 #
-pushd /opt/graphite/conf
-  cp -f carbon.conf.example carbon.conf
-  cp -f storage-schemas.conf.example storage-schemas.conf
-popd
+set -v
 
+#
+# Move graphite and upstart config files into place.
+#
+cp -f ../templates/carbon.conf /opt/graphite/conf/
+cp -f ../templates/storage-schemas.conf /opt/graphite/conf/
+cp -f ../templates/upstart-graphite.conf /etc/init/graphite.conf
+cp -f ../templates/local_settings.py /opt/graphite/webapp/graphite/local_settings.py
 #
 # Create initial graphite database
 #
-cd /opt/graphite/webapp/graphite
-sudo python manage.py syncdb
-sudo chown nobody:nobody /opt/graphite/storage/graphite.db
-cp local_settings.py.example local_settings.py
+
+pushd /opt/graphite/webapp/graphite
+  python manage.py syncdb --noinput
+  chown nobody:nogroup /opt/graphite/storage/graphite.db
+popd

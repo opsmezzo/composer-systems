@@ -3,4 +3,4 @@
 #
 # Start the graphite service
 #
-./opt/graphite/bin/carbon-cache.py start
+service graphite start
