@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
+set -v
 
+pkgin -y install scmgit
 pushd /opt
-  git clone https://github.com/wg/wrk.git
+  git clone https://github.com/isaacs/wrk.git
   cd wrk
   make
-  make install
+  ln wrk /opt/local/bin
 popd
