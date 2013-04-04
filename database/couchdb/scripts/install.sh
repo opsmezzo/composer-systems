@@ -21,4 +21,4 @@ cd $HOME
   ln -s /usr/local/etc/logrotate.d/couchdb /etc/logrotate.d/couchdb
   ln -s /usr/local/etc/init.d/couchdb /etc/init.d/couchdb
   update-rc.d couchdb defaults
-cd ORIGINAL_DIR
+cd $ORIGINAL_DIR
