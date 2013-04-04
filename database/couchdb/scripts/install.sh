@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 [ `uname` == 'Linux' ] && apt-get -y install erlang-dev erlang-manpages erlang-base-hipe erlang-eunit erlang-nox erlang-xmerl erlang-inets libmozjs185-dev libicu-dev libcurl4-gnutls-dev libtool make gcc build-essential
 [ `uname` == 'SunOS' ] && ((yes | pkgin update ) || ( yes | pkgin install scmgit gcc-compiler gmake openssl python27 ruby18-rake-0.8.7nb2 gmake-3.82nb2 zlib-1.2.3 ))
 
