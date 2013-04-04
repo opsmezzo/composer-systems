@@ -5,7 +5,7 @@ cp ../files/https.pem $HOME/https.pem
 
 ORIGINAL_DIR=`pwd`
 cd $HOME
-  wget http://www.us.apache.org/dist/couchdb/1.2.1/apache-couchdb-1.2.1.tar.gz
+  wget http://www.us.apache.org/dist/couchdb/source/1.2.2/apache-couchdb-1.2.2.tar.gz
   tar xvf apache-couchdb-1.2.1.tar.gz
   cd apache-couchdb-1.2.1
   ./configure
