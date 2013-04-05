@@ -17,4 +17,9 @@ rm -rf package
 tar -zxvf $TARBALL
 mv package $HOME/$PACKAGE
 cd "$HOME/$PACKAGE"
+
 npm install --production
+
+git init
+git add .
+git commit -m 'Initial commit' --author="Quill <info@nodejitsu.com>"
