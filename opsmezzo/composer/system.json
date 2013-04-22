@@ -1,0 +1,15 @@
+{
+  "name": "composer",
+  "version": "1.0.0",
+  "description": "Configuration management, and SSH key management sauteed in awesomesauce",
+  "keywords": ["configuration management", "devops"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "dependencies": {
+    "npm-manager": "1.0.x"
+  },
+  "config": {
+    "composer": {
+      "port": 9003
+    }
+  }
+}
