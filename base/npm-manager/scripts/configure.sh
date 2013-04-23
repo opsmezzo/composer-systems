@@ -7,7 +7,9 @@ cp ../templates/npmrc $HOME/.npmrc
 
 #
 # Load `quill_npm_*` environment variables into
-# $HOME/.npmrc
+# $HOME/.npmrc if they exist.
 #
-AUTH=$(printf '%b:%b' $q_npm_username $q_npm_password | base64)
-echo "_auth = $AUTH" >> $HOME/.npmrc
+if [ ! -z $q_npm_username && ! -z $q_npm_password ]; then
+  AUTH=$(printf '%b:%b' $q_npm_username $q_npm_password | base64)
+  echo "_auth = $AUTH" >> $HOME/.npmrc
+fi

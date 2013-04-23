@@ -1,8 +1,10 @@
 # npm-manager
 
-Manages the lifecycle of a single npm package and related executables. **This system is installed on every server running a dependency from a private npm.**
+Manages the lifecycle of a single npm package and related executables. **This system is installed on every server running a dependency from npm (private or public).**
 
 ## Relevant config
+
+All configuration is _optional_ in case you want to run from the public npm registry.
 
 ``` js
 {
