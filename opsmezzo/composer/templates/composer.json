@@ -1,0 +1,10 @@
+{
+  "log": {{ composer.log }}
+  {{#exceptions}}
+  , "exceptions": {{.}}
+  {{/exceptions}}
+  {{#loggly}}  
+  , "loggly": {{.}}
+  {{/loggly}}
+  , "database": {{ composer.database }}
+}

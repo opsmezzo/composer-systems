@@ -1,16 +1,11 @@
 # quill-base
 
-Installs core private `npm` and `quill` files.
+Installs core `quill` files.
 
 ## Relevant config
 
 ``` js
 {
-  "npm": {
-    "registry": "http://reg.njitsu.net", // npm registry to install from
-    "username": "a-user",                // npm username
-    "password": "a-password",            // npm password
-  },
   "composer": {
     "host": "http://composer.njitsu.net", // conservatory composer host
     "host": 9003,                         // conservatory composer port
@@ -24,8 +19,8 @@ Installs core private `npm` and `quill` files.
 
 * `install.sh`: Installs `$HOME/.quillconf`, `forever`, `$HOME/.npmrc` and `quill-cli`
 * `update.sh`: Updates `quill-cli` from `npm`.
+* `uninstall.sh`: Removes `$HOME/.quillconf`, `forever`, and `quill-cli`.
 
 ## Files
 
 * `quillconf`: Configuration for `quill`.
-* `npmrc`: Configuration for `npm`.

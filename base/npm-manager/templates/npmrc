@@ -1,4 +1,6 @@
 always-auth = true
 strict-ssl = false
 unsafe-perm = true
-registry = {{ npm.registry }}
+{{#npm.registry}}
+registry = {{ . }}
+{{/npm.registry}}

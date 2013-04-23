@@ -14,6 +14,5 @@
 #
 for FILE in `ls ../files`; do
   echo "Installing $FILE"
-  chmod u+x,og-rwx ../files/$FILE
-  cp ../files/$FILE $ROOT/bin
+  rm -f ../files/$FILE
 done
