@@ -1,12 +1,4 @@
-#
-# Load `quill_npm_*` environment variables
-#
-AUTH=$(printf '%b:%b' $q_npm_username $q_npm_password | base64)
-
-#
-# Copy quillconf to $HOME/.quillconf
-#
-cp ../templates/quillconf $HOME/.quillconf
+#!/usr/bin/env bash
 
 #
 # Install forever from npm
@@ -14,12 +6,24 @@ cp ../templates/quillconf $HOME/.quillconf
 npm install forever -g
 
 #
-# Move npmrc to $HOME/.npmrc
-#
-cp ../templates/npmrc $HOME/.npmrc
-echo "_auth = $AUTH" >> $HOME/.npmrc
-
-#
-# Install quill from internal npm
+# Install quill from npm
 #
 npm install quill-cli -g
+
+#
+# Configure the system manually on install
+#
+#
+# Copy quillconf to $HOME/.quillconf
+#
+QCONF=$(cat <<EOF
+{
+  "username": "$q_composer_username",
+  "password": "$q_composer_password",
+  "remoteHost": "$q_composer_host",
+  "port": "$q_composer_port"
+}
+EOF
+)
+
+echo "${QCONF}" >> $HOME/.quillconf

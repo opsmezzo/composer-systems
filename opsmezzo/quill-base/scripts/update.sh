@@ -1,4 +1,11 @@
+#!/usr/bin/env bash
+
 #
 # Update quill from internal npm
 #
-npm install quill-cli -g --always-auth --reg $q_npm_registry
+npm install quill-cli -g
+
+#
+# Update forever from npm
+#
+npm update forever -g

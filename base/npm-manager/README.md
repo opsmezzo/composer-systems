@@ -1,10 +1,18 @@
 # npm-manager
 
-Manages the lifecycle of a single npm package and related executables. **This system is installed on every server running a nodejitsu dependency from npm (e.g. haibu, nodejitsu, balanceboard, etc).**
+Manages the lifecycle of a single npm package and related executables. **This system is installed on every server running a dependency from a private npm.**
 
-## Assumptions
+## Relevant config
 
-* **Assumes that a valid `$HOME/.npmrc` file has already been installed. This is done by depending on [quill-base](/systems/base/quill-base).
+``` js
+{
+  "npm": {
+    "registry": "http://reg.njitsu.net", // npm registry to install from
+    "username": "a-user",                // npm username
+    "password": "a-password",            // npm password
+  }
+}
+```
 
 ## Workflow for dependent systems
 
@@ -22,3 +30,9 @@ The management of `npm` packages is relatively simple and done with four files:
 * `npm-uninstall`: Moves any existing versions to `$HOME/versions/<version>`.
 * `npm-update`: Runs `npm-uninstall <package-name>` and `npm-download <package-name>`. **The new version is installed but the old version is archived for rollback.**
 * `npm-configure`: Moves any templates in `../templates` into `$HOME/config`. Since this will only be run on `quill configure` these templates will all ready be rendered when they are moved. 
+
+## Templates
+
+The only relevant template file is the `.npmrc` to be used by npm.
+
+* `npmrc`: Configuration for `npm`.
