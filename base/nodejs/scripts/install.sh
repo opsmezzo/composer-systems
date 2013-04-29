@@ -8,7 +8,7 @@ set -v
 #
 # Set ROOT defaulting to `/opt/local`
 #
-[ -d /opt/local ] && ROOT=/opt/local || ROOT=/usr/local
+[[ $PATH == *"/opt/local/bin"* ]] && ROOT=/opt/local || ROOT=/usr/local
 
 #
 # Download the nodejs tarball
