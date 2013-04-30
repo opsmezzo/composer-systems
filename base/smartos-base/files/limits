@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+ulimit -n 524288
+ndd -set /dev/tcp tcp_smallest_anon_port 12000
+ndd -set /dev/tcp tcp_largest_anon_port 65535
+ndd -set /dev/tcp tcp_max_buf 2097152
+ndd -set /dev/tcp tcp_xmit_hiwat 1048576
+ndd -set /dev/tcp tcp_recv_hiwat 1048576
