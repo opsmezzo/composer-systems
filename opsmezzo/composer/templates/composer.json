@@ -7,4 +7,7 @@
   , "loggly": {{.}}
   {{/loggly}}
   , "database": {{ composer.database }}
+  {{#provisioner}}
+  , "provisioner": {{.}}
+  {{/provisioner}}
 }
