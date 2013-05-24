@@ -4,6 +4,8 @@ PACKAGE=$1
 # Get the version of the existing install
 #
 VERSION=`pkgver $HOME/$PACKAGE/package.json`
+TARGET_PKG="$HOME/versions/$VERSION/$PACKAGE"
+TARGET_TGZ="$HOME/versions/$VERSION/$PACKAGE.tgz"
 
 #
 # Move the existing package into place under $HOME/versions
@@ -13,9 +15,17 @@ if [ ! -d $HOME/versions/$VERSION ]; then
 fi
 
 if [ -d $HOME/$PACKAGE ]; then
-  mv $HOME/$PACKAGE $HOME/versions/$VERSION/$PACKAGE
+  if [ -d $TARGET_PKG ]; then
+    rm -rf $TARGET_PKG
+  fi
+
+  mv $HOME/$PACKAGE $TARGET_PKG
 fi
 
 if [ -f $HOME/$PACKAGE-$VERSION.tgz ]; then
-  mv $HOME/$PACKAGE-$VERSION.tgz $HOME/versions/$VERSION/$PACKAGE.tgz
+  if [ -d $TARGET_TGZ ]; then
+    rm -rf $TARGET_TGZ
+  fi
+
+  mv $HOME/$PACKAGE-$VERSION.tgz $TARGET_TGZ
 fi
