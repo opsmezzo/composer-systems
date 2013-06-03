@@ -1,6 +1,6 @@
 {
   "name": "npm-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Manages a specified npm package across versions",
   "keywords": ["npm", "base"],
   "author": "Nodejitsu Inc <info@nodejitsu.com>",
