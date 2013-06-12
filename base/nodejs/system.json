@@ -6,7 +6,7 @@
   "author": "Nodejitsu Inc <info@nodejitsu.com>",
   "contributors": [{ "name": "Charlie Robbins", "email": "charlie@nodejitsu.com" }],
   "os": {
-    "ubuntu": { "ubuntu-base": "0.0.x" },
+    "ubuntu": { "ubuntu-base": "0.1.x" },
     "smartos": { "smartos-base": "0.0.x" }
   }
 }
