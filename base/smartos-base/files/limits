@@ -6,3 +6,5 @@ ndd -set /dev/tcp tcp_largest_anon_port 65535
 ndd -set /dev/tcp tcp_max_buf 2097152
 ndd -set /dev/tcp tcp_xmit_hiwat 1048576
 ndd -set /dev/tcp tcp_recv_hiwat 1048576
+ndd -set /dev/tcp tcp_time_wait_interval 8000
+ndd -set /dev/tcp tcp_fin_wait_2_flush_interval 30000
