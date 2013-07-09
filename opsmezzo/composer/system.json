@@ -11,5 +11,8 @@
     "composer": {
       "port": 9003
     }
+  },
+  "remoteDependencies": {
+    "conservatory": "1.0.x"
   }
 }
