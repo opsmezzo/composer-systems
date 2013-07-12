@@ -4,6 +4,6 @@
 pkgin -y install scmgit
 
 cp ../files/limits $HOME/.limits
-echo '. .limits' >> $HOME/.bashrc
+grep '. .limits' $HOME/.bashrc || echo '. .limits' >> $HOME/.bashrc
 
 hash -r
