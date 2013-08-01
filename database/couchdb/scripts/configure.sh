@@ -1,2 +1,2 @@
 #!/bin/sh
-cp ../templates/local.ini /root/build-couchdb/build/etc/couchdb/local.ini
+cp ../templates/local.ini /usr/local/etc/couchdb/local.ini
