@@ -10,8 +10,9 @@ cd $HOME
   make
   make install
 
-  useradd -d /var/lib/couchdb -s /bin/false couchdb
-  chown -R couchdb: /usr/local/var/{lib,log,run}/couchdb /usr/local/etc/couchdb
+  groupadd couchdb
+  useradd -d /var/lib/couchdb -g couchdb couchdb
+  chown -R couchdb:couchdb /usr/local/var/{lib,log,run}/couchdb /usr/local/etc/couchdb
   chmod 0770 /usr/local/var/{lib,log,run}/couchdb/
   chmod 664 /usr/local/etc/couchdb/*.ini
   chmod 775 /usr/local/etc/couchdb/*.d
