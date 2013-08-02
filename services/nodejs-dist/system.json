@@ -1,0 +1,10 @@
+{
+  "name": "nodejs-dist",
+  "version": "0.0.0",
+  "description": "Mirrors http://nodejs.org/dist",
+  "keywords": ["nodejs"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>",
+  "dependencies": {
+    "nginx": "1.0.x"
+  }
+}
