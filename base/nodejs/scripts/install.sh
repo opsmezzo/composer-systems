@@ -35,5 +35,6 @@ curl $REMOTE -o $TARBALL
 #
 pushd $ROOT
 tar -zxf /root/$TARBALL --strip=1
+hash -r
 npm -g update npm
 popd
