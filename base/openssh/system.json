@@ -1,0 +1,7 @@
+{
+  "name": "openssh",
+  "version": "0.0.1",
+  "description": "Installs the newest open ssh from support for doorkeeper",
+  "keywords": ["openssh", "doorkeeper"],
+  "author": "Nodejitsu Inc <info@nodejitsu.com>"
+}
