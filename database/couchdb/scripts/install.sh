@@ -12,8 +12,9 @@ cd $HOME
 
   groupadd couchdb
   useradd -d /var/lib/couchdb -g couchdb couchdb
-  chown -R couchdb:couchdb /usr/local/var/{lib,log,run}/couchdb /usr/local/etc/couchdb
-  chmod 0770 /usr/local/var/{lib,log,run}/couchdb/
+  mkdir -p /data/couchdb
+  chown -R couchdb:couchdb /usr/local/var/{lib,log,run}/couchdb /usr/local/etc/couchdb /data/couchdb
+  chmod 0770 /usr/local/var/{lib,log,run}/couchdb/ /data/couchdb
   chmod 664 /usr/local/etc/couchdb/*.ini
   chmod 775 /usr/local/etc/couchdb/*.d
 
