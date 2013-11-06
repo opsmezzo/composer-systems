@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 #
-# Start bin/composer with forever
+# Start bin/composer with SMF
 #
-forever start $HOME/quill-composer/bin/composer -e $q_env --config $HOME/config/composer.json -p $q_composer_port
+svcadm enable composer

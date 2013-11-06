@@ -1,9 +1,11 @@
 {
   "log": {{ composer.log }}
+  , "env": "{{ env }}"
+  , "port": {{ composer.port }}
   {{#exceptions}}
   , "exceptions": {{.}}
   {{/exceptions}}
-  {{#loggly}}  
+  {{#loggly}}
   , "loggly": {{.}}
   {{/loggly}}
   , "database": {{ composer.database }}
