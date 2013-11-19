@@ -1,6 +1,6 @@
 {
   "name": "composer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Configuration management, and SSH key management sauteed in awesomesauce",
   "keywords": ["configuration management", "devops"],
   "author": "Nodejitsu Inc <info@nodejitsu.com>",
