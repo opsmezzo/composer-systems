@@ -1,6 +1,6 @@
 {
   "name": "nodejs",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Installs a pre-compiled version of node.js",
   "keywords": ["nodejs", "base", "required"],
   "author": "Nodejitsu Inc <info@nodejitsu.com>",
