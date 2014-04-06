@@ -1,0 +1,24 @@
+set nocompatible
+set hidden
+set ruler
+set visualbell
+set noerrorbells
+set nostartofline
+set t_vb=
+set autoindent
+set backspace=2
+set ttimeoutlen=100
+set shiftwidth=2
+set tabstop=2
+set expandtab
+set hlsearch
+set laststatus=2
+set autochdir
+syntax on
+nnoremap Y y$
+nnoremap gb :bnext<cr>
+nnoremap gB :bprev<cr>
+nnoremap <leader>a :ls<cr>:b<space>
+nnoremap <f1> :ls<cr>:b<space>
+nnoremap <leader>/ :noh<cr>
+set pastetoggle=<f12>
