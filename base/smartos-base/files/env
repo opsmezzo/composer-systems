@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# smartos uses /usr/share/lib/terminfo, but doesn't point to it properly.
+# this sets terminfo_dirs to the two most common locations.
+# export TERMINFO=/usr/share/lib/terminfo
+export TERMINFO_DIRS=/usr/share/terminfo:/usr/share/lib/terminfo
+
+# use vi mode (like a sane person)
+set -o vi
+
+# aliases
+alias ls='ls -ahF --group-directories-first --color=auto'
+alias ll='ls -lahF --group-directories-first --color=auto'
+
+# cycle through completions with tab
+bind '"\t": menu-complete'
+# shift+tab to cycle back
+bind '"\e[Z": menu-complete-backward'
