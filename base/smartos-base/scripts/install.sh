@@ -9,4 +9,6 @@ grep '. .limits' $HOME/.bashrc || echo '. .limits' >> $HOME/.bashrc
 cp ../files/env $HOME/.env
 grep '. .env' $HOME/.bashrc || echo '. .env' >> $HOME/.bashrc
 
+cp -f ../files/vimrc $HOME/.vimrc
+
 hash -r
