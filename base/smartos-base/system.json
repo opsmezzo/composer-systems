@@ -1,6 +1,6 @@
 {
   "name": "smartos-base",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Base configuration for smartos",
   "keywords": ["base", "os", "smartos"],
   "author": "Nodejitsu Inc <info@nodejitsu.com>"
