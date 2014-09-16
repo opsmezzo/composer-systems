@@ -4,8 +4,8 @@ apt-get -y install gcc make libicu48 libicu-dev erlang libmozjs185-dev g++ logro
 ORIGINAL_DIR=`pwd`
 cd $HOME
 
-  curl http://www.us.apache.org/dist/couchdb/source/1.6.0/apache-couchdb-1.6.0.tar.gz | tar -zxvf-
-  cd apache-couchdb-1.6.0
+  curl http://www.us.apache.org/dist/couchdb/source/1.5.1/apache-couchdb-1.5.1.tar.gz | tar -zxvf-
+  cd apache-couchdb-1.5.1
   ./configure
   make
   make install
