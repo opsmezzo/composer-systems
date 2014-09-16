@@ -19,6 +19,7 @@ mv package $HOME/$PACKAGE
 cd "$HOME/$PACKAGE"
 
 npm install --production
+npm dedupe
 
 git init
 git add .
